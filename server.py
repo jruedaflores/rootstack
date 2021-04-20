@@ -1,16 +1,16 @@
 from flask import Flask, redirect, render_template, request, session, url_for
 from flask_googlemaps import GoogleMaps, Map
 
-from .session import get_token, set_token, get_username_token
-from .models.user import User
-from .services.job_service import get_jobs, get_job
-from .services.user_service import get_access_token, get_profile
+from session import get_token, set_token, get_username_token
+from models.user import User
+from services.job_service import get_jobs, get_job
+from services.user_service import get_access_token, get_profile
 
 app = Flask(__name__)
 app.secret_key = '1q2w3e4r5t6y7u8i9o'
 
-GoogleMaps(app)
-# GoogleMaps(app, key="")
+#GoogleMaps(app)
+GoogleMaps(app, key="AIzaSyCd2yi9X2WixgGfQdh4EoPapY2K6VFVQ_g")
 
 
 @app.before_request
@@ -113,3 +113,7 @@ def gmap_job(job_id):
             )
             return render_template('gmap.html', sndmap=sndmap)
     return redirect(url_for('index'))
+
+
+if __name__ == '__main__':
+    app.run(host="0.0.0.0")

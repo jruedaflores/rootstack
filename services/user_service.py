@@ -1,5 +1,5 @@
 
-from ..request_api import requests_by_get, requests_by_post
+from request_api import requests_by_get, requests_by_post
 
 
 def get_access_token(username, password):

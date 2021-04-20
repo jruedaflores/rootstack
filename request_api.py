@@ -1,5 +1,5 @@
 import requests
-from .bearer_auth import BearerAuth
+from bearer_auth import BearerAuth
 
 
 def requests_by_get(url, token):
