@@ -1,6 +1,6 @@
 
-from ..request_api import requests_by_get
-from ..models.job import Job
+from request_api import requests_by_get
+from models.job import Job
 
 
 def get_job(job_id, token):
